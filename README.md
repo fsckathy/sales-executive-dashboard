@@ -7,7 +7,7 @@
 
 ## 📊 Dashboard Preview
 
-![Executive Overview](Sales_Executive_Dashboard/Screenshots/02.Visão_Executiva.PNG)
+![Executive Overview](Screenshots/02.Visão_Executiva.PNG)
 
 ## 🎯 Project Overview
 
@@ -25,25 +25,25 @@ and support data-driven business analysis.
 
 ## 🏗️ Data Model
 
-![Data Model](Sales_Executive_Dashboard/Documentation/Data_Model.PNG)
+![Data Model](Documentation/Data_Model.PNG)
 
 ## 📈 Dashboard Pages
 
 ### Dashboard Menu
 
-![Menu](Sales_Executive_Dashboard/Screenshots/01.Menu.PNG)
+![Menu](Screenshots/01.Menu.PNG)
 
 ### Executive Overview
 
-![Executive Overview](Sales_Executive_Dashboard/Screenshots/02.Visão_Executiva.PNG)
+![Executive Overview](Screenshots/02.Visão_Executiva.PNG)
 
 ### Performance
 
-![Performance](Sales_Executive_Dashboard/Screenshots/03.Produtos_e_Rentabilidade.PNG)
+![Performance](Screenshots/03.Produtos_e_Rentabilidade.PNG)
 
 ### Market
 
-![Market](Sales_Executive_Dashboard/Screenshots/04.Clientes_e_Mercado.PNG)
+![Market](Screenshots/04.Clientes_e_Mercado.PNG)
 
 ## 💡 Key Business Insights
 
