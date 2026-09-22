@@ -4,6 +4,9 @@
 > product performance and profitability.
 > The dashboard was developed using Power BI Desktop with PBIP source control,
 > DAX, Power Query and dimensional data modeling.
+> For presentation purposes, monetary values were converted to Brazilian Reais (BRL) using
+> exchange rates from the Central Bank of Brazil (BCB), and the dashboard content was
+> translated into Portuguese.
 
 ## 📊 Dashboard Preview
 
