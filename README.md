@@ -65,7 +65,7 @@ and support data-driven business analysis.
 
 ## 📚 Data Source
 
-- E-Commerce Sales Data Warehouse — Kaggle
+- [E-Commerce Sales Data Warehouse — Kaggle](https://www.kaggle.com/datasets/akashmailapalli/e-commerce-sales-data-warehouse?resource=download)
 
 ## 👤 Author
 Katherine Costa
