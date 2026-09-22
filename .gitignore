@@ -1,0 +1,22 @@
+# Power BI local/cache files
+**/.pbi/
+*.pbix
+
+# Local data files
+*.csv
+*.xlsx
+*.xls
+*.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+~$*
