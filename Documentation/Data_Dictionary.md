@@ -1,7 +1,7 @@
 |Tabela         |Coluna              |Descrição                                                                                                     |Tipo de Dado   |
 |---------------|--------------------|--------------------------------------------------------------------------------------------------------------|---------------|
 |fact_sales     |Order_ID            |Identificador único do pedido.                                                                                |Texto          |
-|fact_sales     |Date_Key            |Chave de identificação da data da venda, utilizada para conectar à dim_calendar.                              |Texto          |
+|fact_sales     |Date_Key            |Chave de identificação da data da venda, utilizada para conectar à dim_calendar.                              |Número Inteiro          |
 |fact_sales     |Customer_Key        |Chave de identificação do cliente relacionado à venda, utilizada para conectar à dim_customer.                |Texto          |
 |fact_sales     |Product_Key         |Chave de identificação do produto vendido, utilizada para conectar à dim_product.                             |Texto          |
 |fact_sales     |Geography_Key       |Chave de identificação da localização geográfica da venda, utilizada para conectar à dim_geography.           |Texto          |
