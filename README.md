@@ -63,6 +63,10 @@ and support data-driven business analysis.
 - Git / GitHub
 - DAX Studio
 
+## 📊 Explore the Report
+
+[🔗 View the Interactive Report](https://app.powerbi.com/groups/me/reports/3532b848-1f71-43a7-ad52-81e25d8ee5fc?ctid=8b6c959c-d7c4-406c-9e6b-cac0b71de24e&pbi_source=linkShare)
+
 ## 📚 Data Source
 
 - [E-Commerce Sales Data Warehouse — Kaggle](https://www.kaggle.com/datasets/akashmailapalli/e-commerce-sales-data-warehouse?resource=download)
