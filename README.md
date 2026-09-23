@@ -50,7 +50,7 @@ and support data-driven business analysis.
 
 ## 💡 Key Business Insights
 
-- Strong and stable profitability: R$2.16B in revenue, R$681M in profit and a 31.5% margin, with relatively stable monthly revenue throughout 2025. The revenue decline observed between September and November was primarily driven by the Fashion category in the South region.
+- Strong and stable profitability: R$2.17B in revenue, R$685M in profit and a 31.5% margin, with relatively stable monthly revenue throughout 2025. The revenue decline observed between September and November was primarily driven by the Fashion category in the South region.
 - Diversified and balanced portfolio: Top 5 products represent only 17.4% of revenue, while margins remain consistently around 31–32% across products. Prioritize high-margin products and categories to increase profitability while maintaining portfolio diversification.
 - High loyalty and low concentration: 96.5% of customers are recurring, generating 99.3% of revenue, while the Top 10 customers account for just 0.33% of total revenue. Small Business has the highest revenue per customer, suggesting an opportunity to expand this segment while maintaining its higher customer value.
 
