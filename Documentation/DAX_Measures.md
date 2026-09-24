@@ -1,6 +1,6 @@
 # Medidas DAX
 
-Catálogo das **30 medidas** do modelo semântico do **Sales Executive Dashboard**, organizadas nas 9 pastas de exibição da tabela `_measures`.
+Catálogo das **33 medidas** do modelo semântico do **Sales Executive Dashboard**, organizadas nas 9 pastas de exibição da tabela `_measures`.
 
 > **Moeda:** os valores de origem estão em USD. As medidas com sufixo **BRL** convertem cada dia pela cotação USD/BRL do Banco Central (`dim_calendar[Taxa_USD_BRL]`). As medidas base em USD (`Receita`, `Lucro`, `Custo`) servem de insumo para as versões em BRL.
 
@@ -21,6 +21,9 @@ Catálogo das **30 medidas** do modelo semântico do **Sales Executive Dashboard
 |  | [Lucro por Pedido](#lucro-por-pedido) | Moeda (BRL) |
 |  | [Lucro BRL](#lucro-brl) | Moeda (BRL) |
 |  | [Lucro Top 10 Produtos BRL](#lucro-top-10-produtos-brl) | Moeda (BRL) |
+|  | [Lucro Top 10 %](#lucro-top-10-) | Percentual |
+|  | [Top 10 Portfolio %](#top-10-portfolio-) | Percentual |
+|  | [Perf Lucro Top 10](#perf-lucro-top-10) | Texto |
 | [Margem](#margem) | [Margem Bruta %](#margem-bruta-) | Percentual |
 |  | [Margem Mês Anterior](#margem-mês-anterior) | Percentual |
 |  | [Variação Margem pp](#variação-margem-pp) | Pontos percentuais |
@@ -73,7 +76,7 @@ Pedidos = DISTINCTCOUNT(fact_sales[Order_ID])
 
 ### Receita
 
-**Formato:** Moeda (USD) `\$#,0.###############;(\$#,0.###############);\$#,0.###############`<br>
+**Formato:** Moeda (USD) ` "$" #,0.00;("$" #,0.00);"$" #,0.00`<br>
 **Usada por:** [Receita BRL](#receita-brl)
 
 ```dax
@@ -193,7 +196,7 @@ Lucro = SUM(fact_sales[Profit])
 
 **Formato:** Moeda (BRL) `"R$" #,0.00;("R$" #,0.00);"R$" #,0.00`<br>
 **Usa:** [Lucro](#lucro-1)<br>
-**Usada por:** [Lucro Top 10 Produtos BRL](#lucro-top-10-produtos-brl), [Lucro por Pedido](#lucro-por-pedido), [Margem Bruta %](#margem-bruta-)
+**Usada por:** [Lucro Top 10 %](#lucro-top-10-), [Lucro Top 10 Produtos BRL](#lucro-top-10-produtos-brl), [Lucro por Pedido](#lucro-por-pedido), [Margem Bruta %](#margem-bruta-), [Perf Lucro Top 10](#perf-lucro-top-10), [Top 10 Portfolio %](#top-10-portfolio-)
 
 ```dax
 'Lucro BRL' =
@@ -224,7 +227,7 @@ Lucro = SUM(fact_sales[Profit])
 
 ```dax
 'Lucro Top 10 Produtos BRL' =
-    VAR Universo =
+     VAR Universo =
         CALCULATETABLE(
             ADDCOLUMNS(VALUES(dim_product[Product_Key]), "@Lucro", [Lucro BRL]),
             ALLSELECTED(dim_product)
@@ -232,6 +235,66 @@ Lucro = SUM(fact_sales[Profit])
     VAR Lideres = TOPN(10, Universo, [@Lucro], DESC, dim_product[Product_Key], ASC)
     VAR ProdutoAtual = SELECTEDVALUE(dim_product[Product_Key])
     RETURN IF(CONTAINS(Lideres, dim_product[Product_Key], ProdutoAtual), [Lucro BRL])
+```
+
+### Lucro Top 10 %
+
+**Formato:** Percentual `0.0%;-0.0%;0.0%`<br>
+**Usa:** [Lucro BRL](#lucro-brl)<br>
+**Usada por:** [Perf Lucro Top 10](#perf-lucro-top-10)
+
+```dax
+'Lucro Top 10 %' =
+    VAR Universo =
+        CALCULATETABLE (
+            ADDCOLUMNS ( VALUES ( dim_product[Product_Key] ), "@Lucro", [Lucro BRL] ),
+            ALLEXCEPT ( dim_product, dim_product[Categoria] )
+        )
+    VAR Lideres = TOPN ( 10, Universo, [@Lucro], DESC, dim_product[Product_Key], ASC )
+    RETURN DIVIDE ( SUMX ( Lideres, [@Lucro] ), SUMX ( Universo, [@Lucro] ) )
+```
+
+### Top 10 Portfolio %
+
+**Formato:** Percentual `0.0%;-0.0%;0.0%`<br>
+**Usa:** [Lucro BRL](#lucro-brl)<br>
+**Usada por:** [Perf Lucro Top 10](#perf-lucro-top-10)
+
+```dax
+'Top 10 Portfolio %' =
+    VAR Universo =
+        CALCULATETABLE (
+            ADDCOLUMNS ( VALUES ( dim_product[Product_Key] ), "@Lucro", [Lucro BRL] ),
+            ALLEXCEPT ( dim_product, dim_product[Categoria] )
+        )
+    VAR ProdutosComVenda = COUNTROWS ( FILTER ( Universo, NOT ISBLANK ( [@Lucro] ) ) )
+    RETURN
+    DIVIDE ( MIN ( 10, ProdutosComVenda ), ProdutosComVenda )
+```
+
+### Perf Lucro Top 10
+
+**Formato:** Texto dinâmico<br>
+**Usa:** [Lucro BRL](#lucro-brl), [Lucro Top 10 %](#lucro-top-10-), [Top 10 Portfolio %](#top-10-portfolio-)
+
+```dax
+'Perf Lucro Top 10' =
+    VAR Universo =
+        CALCULATETABLE (
+            ADDCOLUMNS ( VALUES ( dim_product[Product_Key] ), "@Lucro", [Lucro BRL] ),
+            ALLEXCEPT ( dim_product, dim_product[Categoria] )
+        )
+    VAR ProdutosComVenda = COUNTROWS ( FILTER ( Universo, NOT ISBLANK ( [@Lucro] ) ) )
+    RETURN
+        IF (
+            ProdutosComVenda <= 10,
+            "Filtro com " & ProdutosComVenda & " produtos: todos estão no Top 10",
+            "Os 10 mais lucrativos representam: "
+                & FORMAT ( [Top 10 Portfolio %], "0%", "pt-BR" )
+                & " do portfólio e "
+                & FORMAT ( [Lucro Top 10 %], "0%", "pt-BR" )
+                & " do lucro"
+        )
 ```
 
 [Voltar ao índice](#índice)
