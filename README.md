@@ -50,9 +50,9 @@ and support data-driven business analysis.
 
 ## 💡 Key Business Insights
 
-- Strong and stable profitability: R$2.17B in revenue, R$685M in profit and a 31.5% margin, with relatively stable monthly revenue throughout 2025. The revenue decline observed between September and November was primarily driven by the Fashion category in the South region.
-- Diversified and balanced portfolio: Top 5 products represent only 17.4% of revenue, while margins remain consistently around 31–32% across products. Prioritize high-margin products and categories to increase profitability while maintaining portfolio diversification.
-- High loyalty and low concentration: 96.5% of customers are recurring, generating 99.3% of revenue, while the Top 10 customers account for just 0.33% of total revenue. Small Business has the highest revenue per customer, suggesting an opportunity to expand this segment while maintaining its higher customer value.
+- In 2025, the business generated R$ 2.17B in revenue and R$ 685M in profit, with a stable 31.5% margin. Revenue in BRL averaged 6.6% less per month from September to November than from January to August, mainly because the Brazilian real appreciated against the US dollar. In USD, sales were virtually flat (-0.9%), and this small decline came mostly from Fashion in the South region.
+- Revenue is well spread across the portfolio: the top 5 products account for only 17.4% of the total. Margins are nearly identical across products (31–32%) and each product sells a similar number of orders, so higher-value items generate more profit. Fashion leads with 26% of total profit, supported by the highest average ticket (R$ 56K), and the 10 most profitable products (20% of the portfolio) deliver 33% of profit.
+- Customer loyalty is high: 96.5% of customers placed two or more orders during the year, accounting for 99.3% of revenue. Concentration risk is minimal, as the top 10 customers represent only 0.33% of revenue. Revenue per customer is similar across segments (about R$ 218K), so expansion priorities should be based on customer acquisition cost (CAC). Small Business and Corporate have smaller customer bases and may have room to grow, but this should be validated with market data.
 
 ## 🛠️ Tools & Technologies
 
