@@ -50,7 +50,7 @@ and support data-driven business analysis.
 
 ## 💡 Key Business Insights
 
-- In 2025, the business generated R$ 2.17B in revenue and R$ 685M in profit, with a stable 31.5% margin. Revenue in BRL averaged 6.6% less per month from September to November than from January to August, mainly because the Brazilian real appreciated against the US dollar. In USD, sales were virtually flat (-0.9%), and this small decline came mostly from Fashion in the South region.
+- In 2025, the business generated R$ 2.17B in revenue and R$ 685M in profit, with a stable 31.5% margin. Revenue in BRL averaged 6.6% less per month from September to November than from January to August, mainly because the Brazilian real appreciated against the US dollar. 
 - Revenue is well spread across the portfolio: the top 5 products account for only 17.4% of the total. Margins are nearly identical across products (31–32%) and each product sells a similar number of orders, so higher-value items generate more profit. Fashion leads with 26% of total profit, supported by the highest average ticket (R$ 56K), and the 10 most profitable products (20% of the portfolio) deliver 33% of profit.
 - Customer loyalty is high: 96.5% of customers placed two or more orders during the year, accounting for 99.3% of revenue. Concentration risk is minimal, as the top 10 customers represent only 0.33% of revenue. Revenue per customer is similar across segments (about R$ 218K), so expansion priorities should be based on customer acquisition cost (CAC). Small Business and Corporate have smaller customer bases and may have room to grow, but this should be validated with market data.
 
